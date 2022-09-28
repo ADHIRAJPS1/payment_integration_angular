@@ -1,0 +1,44 @@
+<p>payment-form works!</p>
+<!-- <form [formGroup]="paymentForm"></form> -->
+<form [formGroup]="paymentForm" (ngSubmit)="submit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+    <span *ngIf="paymentForm.value.firstName.invalid">Not correct</span>
+
+    <br><br>
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+    <span *ngIf="!paymentForm.value.lastName && paymentForm.value.lastName.touched">Not correct</span>
+
+    <br><br>
+
+    <label for="last-name">Payment Type: </label>
+    <input id="last-name" type="text" formControlName="paymentType">
+    <span *ngIf="!paymentForm.value.paymentType && paymentForm.value.paymentType.touched">Not correct</span>
+
+    <br><br>
+  
+    <label for="last-name">Amount: </label>
+    <input id="last-name" type="text" formControlName="amount">
+    <span *ngIf="!paymentForm.value.amount && paymentForm.value.amount.touched">Not correct</span>
+
+    <br><br>
+
+    <label for="last-name">Phone Number: </label>
+    <input id="last-name" type="text" formControlName="phoneNumber">
+    <span *ngIf="!paymentForm.value.phoneNumber && paymentForm.value.phoneNumber.touched">Not correct</span>
+
+    <br><br>
+
+    <label for="last-name">Email: </label>
+    <input id="last-name" type="text" formControlName="email">
+    <span *ngIf="!paymentForm.value.email && paymentForm.value.email.touched">Not correct</span>
+   
+    <br><br>
+
+    <button type="submit" [disabled]="paymentForm.invalid">SUBMIT</button>
+
+
+  </form>
